@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.6.5';
+            $this->version = '1.6.6';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -167,16 +167,18 @@ class Wt_Advanced_Order_Number {
         }
 
         // WC Subscriptions support
-            add_filter( 'wcs_subscription_meta_query', array( $this, 'subscriptions_remove_renewal_order_number_meta' ) );
-            add_filter( 'wcs_renewal_order_created', array( $this, 'subscriptions_sequential_order_number' ), 10, 2 );
-            $subscription_version = class_exists( 'WC_Subscriptions' ) && ! empty( WC_Subscriptions::$version ) ? WC_Subscriptions::$version : null;
 
-            // Prevent data being copied to subscriptions
-            if ( null !== $subscription_version && version_compare( $subscription_version, '2.5.0', '>=' ) ) {
-                add_filter( 'wc_subscriptions_renewal_order_data', array( $this, 'wt_seq_remove_renewal_order_meta'), 10 );
-            } else {
-                add_filter( 'wcs_renewal_order_meta_query', array( $this, 'subscriptions_remove_renewal_order_number_meta' ), 10 );
-            }
+        add_filter( 'wcs_renewal_order_created', array( $this, 'subscriptions_sequential_order_number' ), 10, 2 );
+        $subscription_version = class_exists( 'WC_Subscriptions' ) && ! empty( WC_Subscriptions::$version ) ? WC_Subscriptions::$version : null;
+
+        // Prevent data being copied to subscriptions
+        if ( null !== $subscription_version && version_compare( $subscription_version, '2.5.0', '>=' ) ) {
+            add_filter( 'wc_subscriptions_subscription_data', array( $this, 'wt_seq_remove_renewal_order_meta' ) );
+            add_filter( 'wc_subscriptions_renewal_order_data', array( $this, 'wt_seq_remove_renewal_order_meta'), 10 );
+        } else {
+            add_filter( 'wcs_subscription_meta_query', array( $this, 'subscriptions_remove_renewal_order_number_meta' ) );
+            add_filter( 'wcs_renewal_order_meta_query', array( $this, 'subscriptions_remove_renewal_order_number_meta' ), 10 );
+        }
 
         // Webtoffee Subscriptions support
         add_filter( 'hf_subscription_meta_query', array( $this, 'subscriptions_remove_renewal_order_number_meta' ) );
@@ -555,9 +557,12 @@ class Wt_Advanced_Order_Number {
 
         $order = new WC_Order($order_id);
         $order_date_format='Y-m-d h:i:s';
-        $date_val = $order->get_date_created();   
-        $order_date = $date_val->format($order_date_format); 
-        
+        $date_val = $order->get_date_created();  
+        if($date_val){
+            $order_date = $date_val->format($order_date_format); 
+        }else{
+            $is_old_order = true;
+        }        
         if(get_option('wt_seq_basic_installation_date') === false)
         {
             if(get_option('wt_seq_basic_start_date'))
@@ -575,9 +580,21 @@ class Wt_Advanced_Order_Number {
         $local_timestamp = get_date_from_gmt( $utc_timestamp_converted, 'Y-m-d h:i:s' );
         if($order_date < $local_timestamp)
         {
-            return true;
+            $is_old_order = true;
         }
-        return false;
+        else
+        {
+            $is_old_order = false;
+        }
+    	 /**
+		 * Filters the is old order.
+		 *
+		 * @since 1.6.6
+		 *
+		 * @param bool $is_old_order Whether the order is old or not.
+		 * @param string $order_id Order ID.
+		 */
+        return apply_filters( 'wt_sequential_order_is_old_order', $is_old_order, $order_id );
     }
 
     /**
@@ -605,14 +622,11 @@ class Wt_Advanced_Order_Number {
     }
 
     public function wt_seq_order_status_changed($order_id, $old_status, $new_status, $order) {
-        
-        $order = wc_get_order( $order_id );
-        $order_status = $order ? $order->get_status() : '';
-        
-        $is_draft = self::wt_seq_is_draft_order( $order_status );
+                
+        $is_draft = self::wt_seq_is_draft_order( $old_status);
         $is_draft = apply_filters('wt_sequential_is_draft_order',$is_draft,$order);
 
-        if( false === $is_draft ) {
+        if( true === $is_draft ) {
             $this->set_sequential_number( $order_id );
         }
     }
