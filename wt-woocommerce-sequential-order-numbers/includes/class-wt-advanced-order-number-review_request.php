@@ -50,19 +50,22 @@ class Wt_Advanced_Order_Number_Review_Request
 
 		if($this->check_condition()) /* checks the banner is active now */
 		{
-			$this->banner_message = sprintf(__("Hey, we at %sWebToffee%s would like to thank you for using our plugin. We would really appreciate if you could take a moment to drop a quick review that will inspire us to keep going.", 'wt-woocommerce-sequential-order-numbers'), '<b>', '</b>');
-
-			/* button texts */
-			$this->later_btn_text=__("Remind me later", 'wt-woocommerce-sequential-order-numbers');
-			$this->never_btn_text=__("Not interested", 'wt-woocommerce-sequential-order-numbers');
-			$this->review_btn_text=__("Review now", 'wt-woocommerce-sequential-order-numbers');
-
+			add_action ('init', array($this, 'load_messages')); /* load plugin text domain */
 			add_action('admin_notices', array($this, 'show_banner')); /* show banner */
 			add_action('admin_print_footer_scripts', array($this, 'add_banner_scripts')); /* add banner scripts */
 			add_action('wp_ajax_'.$this->ajax_action_name, array($this, 'process_user_action')); /* process banner user action */
 		}
 	}
 
+	public function load_messages()
+	{
+			$this->banner_message = sprintf(__("Hey, we at %sWebToffee%s would like to thank you for using our plugin. We would really appreciate if you could take a moment to drop a quick review that will inspire us to keep going.", 'wt-woocommerce-sequential-order-numbers'), '<b>', '</b>');
+			/* button texts */
+			$this->later_btn_text=__("Remind me later", 'wt-woocommerce-sequential-order-numbers');
+			$this->never_btn_text=__("Not interested", 'wt-woocommerce-sequential-order-numbers');
+			$this->review_btn_text=__("Review now", 'wt-woocommerce-sequential-order-numbers');
+	}
+	
 	/**
 	*	Set config vars
 	*/

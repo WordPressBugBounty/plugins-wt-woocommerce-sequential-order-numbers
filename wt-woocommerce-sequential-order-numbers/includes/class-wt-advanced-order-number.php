@@ -16,13 +16,15 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.6.6';
+            $this->version = '1.6.7';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
 
         $this->load_dependencies();
-        $this->set_locale();
+        if(get_bloginfo('version') < 6.7){
+            $this->set_locale();
+        }
         $this->define_admin_hooks();
         $this->define_public_hooks();
 
@@ -42,6 +44,7 @@ class Wt_Advanced_Order_Number {
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-wt-advanced-order-number-review_request.php';
         //add other solutions section
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-wt-advanced-order-number-other-solution.php';
+        require_once plugin_dir_path(dirname(__FILE__)). 'includes/class-bfcm-twenty-twenty-four.php';
         
         /**
 		 * The class responsible for defining all actions that occur in common for public and admin -facing
@@ -57,7 +60,7 @@ class Wt_Advanced_Order_Number {
     private function set_locale() {
 
         $plugin_i18n = new Wt_Advanced_Order_Number_i18n();
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+        $this->loader->add_action('init', $plugin_i18n, 'load_plugin_textdomain');
     }
 
         /**

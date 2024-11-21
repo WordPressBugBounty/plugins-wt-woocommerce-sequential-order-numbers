@@ -203,6 +203,13 @@ ul.wt-seqpro-newfeat li {
   color: #007FFF;
 }
 p.submit{float: left; width: 100%;}
+.bfcm_doc_settings {
+        position: absolute; /* Allows positioning relative to the closest positioned ancestor */
+        right: 20px; /* Adjust to position it on the right */
+        z-index: 2; /* Ensure it appears above other content */
+        border: none;
+        background-color:##f4f9fc;
+    }
 </style>
 <?php 
 if(Wt_Advanced_Order_Number_Admin::wt_is_enable_rtl_support()) /* checks the current language need RTL support */
@@ -218,7 +225,14 @@ if(Wt_Advanced_Order_Number_Admin::wt_is_enable_rtl_support()) /* checks the cur
 ?>
 <div class="wt-seq-sidebar wt_gopro_block" style="margin-bottom: 1em;margin-top: 20px;">
 <div class="wt-seq-sidebar wt_gopro_block">
+<?php
+if (Wtso_Bfcm_Twenty_Twenty_Four::is_bfcm_season()) { ?>
+        <div class="bfcm_doc_settings">
+            <img class="bfcm-coupon-img" src="<?php echo esc_url( plugins_url( 'images/bfcm-30-off-coupon.svg', dirname(__FILE__)) ); ?>" alt="30% Off Coupon">
+        </div>
+    <?php } ?>
   <div class="wt-seqpro-header">
+
     <div class="wt-seqpro-name">
       <img src="<?php echo esc_url($seq_order_logo_url); ?>" alt="featured img" width="36" height="36">
       <h4 class="wt-product-name"><?php echo __('Sequential Order Number for WooCommerce Pro','wt-woocommerce-sequential-order-numbers'); ?></h4>
