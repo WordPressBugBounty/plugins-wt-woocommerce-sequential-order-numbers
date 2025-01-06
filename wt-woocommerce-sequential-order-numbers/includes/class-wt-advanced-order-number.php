@@ -16,15 +16,13 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.6.7';
+            $this->version = '1.6.8';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
 
         $this->load_dependencies();
-        if(get_bloginfo('version') < 6.7){
-            $this->set_locale();
-        }
+        $this->set_locale();
         $this->define_admin_hooks();
         $this->define_public_hooks();
 
