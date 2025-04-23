@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.6.8';
+            $this->version = '1.6.9';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -716,15 +716,16 @@ class Wt_Advanced_Order_Number {
 
                     $last_order_num = get_option('wt_last_order_number', 0);
 
-                    $query_array = [
-                        "INSERT INTO {$wpdb->postmeta} (post_id, meta_key, meta_value) VALUES (%d,%s,%s)",
-                    ];
+                    
                         
-                    if(Wt_Advanced_Order_Number_Common::is_wc_hpos_enabled()) {
-                            
+                    if( Wt_Advanced_Order_Number_Common::is_wc_hpos_enabled() ) {  
                         $table_name = $wpdb->prefix.'wc_orders_meta';
-
-                        $query_array[] = "INSERT INTO {$table_name} (order_id, meta_key, meta_value) VALUES (%d,%s,%s)";  
+                        $query_array= array( "INSERT INTO {$table_name} (order_id, meta_key, meta_value) VALUES (%d,%s,%s)" );
+                        if("yes" === get_option( 'woocommerce_custom_orders_table_data_sync_enabled' )){
+                            $query_array []= "INSERT INTO {$wpdb->postmeta} (post_id, meta_key, meta_value) VALUES (%d,%s,%s)" ;
+                        }
+                    }else{
+                        $query_array = array( "INSERT INTO {$wpdb->postmeta} (post_id, meta_key, meta_value) VALUES (%d,%s,%s)" );
                     }
 
                     $wt_last_order_number = get_option('wt_last_order_number', $last_order_num);
