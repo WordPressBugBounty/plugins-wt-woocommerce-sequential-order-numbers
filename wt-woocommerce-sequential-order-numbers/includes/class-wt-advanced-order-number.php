@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.6.9';
+            $this->version = '1.7.0';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -662,8 +662,13 @@ class Wt_Advanced_Order_Number {
     public function set_sequential_number($post_id, $post = array() ) {
 
         global $wpdb;
-        if ( is_array( $post ) || is_null( $post ) || ( is_object( $post ) && (( isset( $post->post_type )) || isset( $post->type) ) && (( ( 'shop_order' === $post->post_type ) ) || ( 'shop_order' === $post->type ) ) ) ){
+        if ( is_array( $post ) || is_null( $post ) || ( is_object( $post ) && ( ( isset( $post->post_type ) && ( 'shop_order' === $post->post_type ) ) || ( isset( $post->type ) && ( 'shop_order' === $post->type ) ) ) ) ){
+
             $order = $post instanceof \WC_Order ? $post : ($post_id instanceof \WC_Order ? $post_id :wc_get_order( $post_id ));
+
+            if(!$order || ! $order instanceof \WC_Order){
+                return;
+            }
 
             // checks whether the order is subscription order
             if ( is_object( $order ) && is_a( $order, 'WC_Subscription' ) ) {
