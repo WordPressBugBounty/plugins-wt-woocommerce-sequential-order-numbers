@@ -1,11 +1,11 @@
 === Sequential Order Number for WooCommerce ===
 Contributors: webtoffee
-Version: 1.7.0
+Version: 1.7.1
 Donate link: https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/
 Tags: woocommerce custom order number, woocommerce sequential order number, custom order number, sequential number, sequential order numbers for woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8.1
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -36,7 +36,7 @@ When you activate the sequential order number plugin, if you have no orders in y
 * Supports WooCommerce custom order numbers
 * Compatible with HPOS
 * Tested OK with PHP 8.2
-* Tested OK with WooCommerce 9.8.5
+* Tested OK with WooCommerce 9.9.4
 
 
 >**Note:** If you like to make any of your other plugins (invoice/payment/shipment) compatible with the Sequential Order Numbers for WooCommerce, please make the below tweak.
@@ -138,9 +138,6 @@ Yes. It's possible to add order date prefix.
 
 * **[PDF Invoice, Packing Slips, Delivery notes, and Shipping Label Plugin for WooCommerce](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/) -** Automatically generate and print invoice and related shipping documents in your WooCommerce store.
 * **[Order/Coupon Import Export Plugin](https://wordpress.org/plugins/order-import-export-for-woocommerce/) -** Custom or bulk export orders and/or coupons to a CSV and import them to your WooCommerce store.
-* **[Stripe Payment Gateway Plugin for WooCommerce](https://wordpress.org/plugins/payment-gateway-stripe-and-woocommerce-integration/) -** Connect your WooCommerce store with Stripe and accept payments through credit/debit cards, Apple pay, Google pay, Alipay, and Stripe checkout via the Stripe payment gateway.
-* **[PayPal Express Payment Gateway Plugin for WooCommerce](https://wordpress.org/plugins/express-checkout-paypal-payment-gateway-for-woocommerce/) -** Connect your WooCommerce store with PayPal Express payment gateway and let your customers pay using credit/debit cards and PayPal money without leaving your website.
-
 
 == Screenshots ==
 
@@ -149,6 +146,10 @@ Yes. It's possible to add order date prefix.
 
 
 == Changelog ==
+
+= 1.7.1 2025-06-23 =
+* [Compatibility] - WooCommerce 9.9.4
+* [Add] - REST API support for sequential order number search.
 
 = 1.7.0 2025-06-03 =
 * [Compatibility] - WooCommerce 9.8.5
@@ -478,6 +479,6 @@ Yes. It's possible to add order date prefix.
 
 == Upgrade Notice ==
 
-= 1.7.0 =
-* [Compatibility] - WooCommerce 9.8.5
-* [Compatibility] - WordPress 6.8.1
+= 1.7.1 =
+* [Compatibility] - WooCommerce 9.9.4
+* [Add] - REST API support for sequential order number search.

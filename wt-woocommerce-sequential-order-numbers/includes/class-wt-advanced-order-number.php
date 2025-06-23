@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.7.0';
+            $this->version = '1.7.1';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -87,7 +87,12 @@ class Wt_Advanced_Order_Number {
 
         }
 
-        add_action('plugins_loaded', array($this, 'setup_sequential_number'));    
+        add_action('plugins_loaded', array($this, 'setup_sequential_number')); 
+        
+        // REST API support for custom order number search.
+        add_filter( 'woocommerce_rest_orders_collection_params', array($this, 'wt_sequential_add_custom_order_number_query_arg'), 10, 1 );
+        add_filter( 'woocommerce_rest_orders_prepare_object_query', array($this, 'wt_sequential_filter_orders_by_custom_order_number'), 100, 2 );
+
     }
 
     public function define_common_hooks() {
@@ -866,5 +871,71 @@ class Wt_Advanced_Order_Number {
         }
     
         return $where;
+    }
+
+    /**
+     * @since 1.7.1
+     * Add custom order number query arg to the REST API.
+     *
+     * @param array $args Query arguments.
+     * @return array Query arguments.
+     */
+    public function wt_sequential_add_custom_order_number_query_arg( $args ) {
+        $args['order_number'] = array(
+            'description'       => __('Filter by custom order number', 'wt-woocommerce-sequential-order-numbers'),
+            'type'              => 'string',
+            'validate_callback' => 'is_string',
+        );
+        return $args;
+    }
+    /**
+     * @since 1.7.1
+     * Filter orders by custom order number.
+     *
+     * @param array $query Query arguments.
+     * @param \WP_REST_Request $request Request arguments.
+     * @return array Query arguments.
+     */
+    public function wt_sequential_filter_orders_by_custom_order_number( $query, $request ) {
+
+        if ( isset( $request['order_number'] ) && $request instanceof \WP_REST_Request) {
+            global $wpdb;
+            if( Wt_Advanced_Order_Number_Common::is_wc_hpos_enabled() ) {  
+                $order_table = $wpdb->prefix.'wc_orders';
+                $order_meta_table = $wpdb->prefix.'wc_orders_meta';
+            }else{
+                $order_table = $wpdb->prefix.'posts';
+                $order_meta_table = $wpdb->prefix.'postmeta';
+            }
+            
+            /**
+             * Filter orders by custom order number.
+             * @since 1.7.1
+             *
+             * @param bool $search_exact Whether to search for exact order number. Default is false.
+             * @return bool Whether to search for exact order number.
+             */
+            $search_exact = apply_filters('wt_sequential_search_exact_order_number',false);
+
+            if($search_exact){
+                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT order_id FROM `$order_meta_table` WHERE meta_key = %s AND meta_value = %s)",
+                '_order_number',
+                $request['order_number']);
+            }else{
+                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT order_id FROM `$order_meta_table` WHERE meta_key = %s AND meta_value LIKE %s)",
+                '_order_number',
+                '%' . $wpdb->esc_like($request['order_number']) . '%');
+            }
+
+            $results = $wpdb->get_results( $where );
+            $order_ids = array_column($results, 'id');
+            if( !empty($order_ids) && is_array($order_ids)){
+                $query['post__in'] = $order_ids;
+            }else{
+                $query['post__in'] = array( '0' ); // If no orders found, return an empty array.
+            }
+
+        }
+        return $query;
     }
 }

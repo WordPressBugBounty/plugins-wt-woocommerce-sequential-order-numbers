@@ -35,7 +35,8 @@ if ( ! defined( 'WPINC' ) ) {die;
     <div class="wt_seq_row"> 
         <div clas="wt_seq_headings">
             <h1 class="wt_seq_heading_1"><?php _e('More Plugins To Make Your Store Stand Out', 'wt-woocommerce-sequential-order-numbers'); ?></h1>
-            <h2 class="wt_seq_heading_2"><?php _e('Check out our other plugins that are perfectly suited for WooCommerce store needs.', 'wt-woocommerce-sequential-order-numbers'); ?></h2> 
+            <h2 class="wt_seq_heading_2"><?php _e('Check out our other plugins that are perfectly suited for WooCommerce store needs.', 'wt-woocommerce-sequential-order-numbers'); ?></h2>
+            <br/>
         </div>
     <div class="wt_seq_column">
 <?php 
@@ -91,15 +92,15 @@ $plugins=array(
             'basic_plugin'  => '',
         ),
         'product_feed_sync' => array(
-            'title'         => __('WebToffee WooCommerce Product Feed & Sync Manager', 'wt-woocommerce-sequential-order-numbers'),
+            'title'         => __('WooCommerce Product Feed & Sync Manager', 'wt-woocommerce-sequential-order-numbers'),
             'description'   => __('Generate WooCommerce product feeds for Google Merchant Center and Facebook Business Manager. Use the Facebook catalog sync manager to sync WooCommerce products with Facebook and Instagram shops.', 'wt-woocommerce-sequential-order-numbers'),
             'image_url'     => 'product-feed-sync.png',
-            'premium_url'   => 'https://www.webtoffee.com/product/product-catalog-sync-for-facebook/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=WooCommerce_Product_Feed',
+            'premium_url'   => 'https://www.webtoffee.com/product/woocommerce-product-feed/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=WooCommerce_Product_Feed',
             'pro_plugin'    => 'webtoffee-product-feed-pro/webtoffee-product-feed-pro.php',
             'basic_plugin'  => 'webtoffee-product-feed/webtoffee-product-feed.php',
         ),
         'request_quote' => array(
-            'title'         => __('WebToffee Woocommerce Request a Quote', 'wt-woocommerce-sequential-order-numbers'),
+            'title'         => __('Woocommerce Request a Quote', 'wt-woocommerce-sequential-order-numbers'),
             'description'   => __('Configure a fully optimized WooCommerce quote request set up in your store. Allow customers to request quotes and store managers to respond to them. Hide product prices, set up email alerts, and more.', 'wt-woocommerce-sequential-order-numbers'),
             'image_url'     => 'request-quote.png',
             'premium_url'   => 'https://www.webtoffee.com/product/woocommerce-request-a-quote/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=Request_Quote',
@@ -117,7 +118,7 @@ $plugins=array(
             'basic_plugin'  => '', 
         ),    
         'giftcards_plugin' => array(
-            'title'         => __('WebToffee WooCommerce Gift Cards', 'wt-woocommerce-sequential-order-numbers'),
+            'title'         => __('WooCommerce Gift Cards', 'wt-woocommerce-sequential-order-numbers'),
             'description'   => __('Create and manage advanced gift cards for WooCommerce stores. Enable your customers to buy, redeem, and share gift cards from your store.', 'wt-woocommerce-sequential-order-numbers'),
             'image_url'     => 'giftcards_plugin.png',
             'premium_url'   => 'https://www.webtoffee.com/product/woocommerce-gift-cards/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=WooCommerce_Gift_Cards',
@@ -209,33 +210,6 @@ $plugins=array(
             'basic_url'     => '',
             'pro_plugin'    => 'wt-woocommerce-gift-cards/wt-woocommerce-gift-cards.php',
             'basic_plugin'  => '', 
-        ),
-        'paypal_express_checkout_plugin' => array(
-            'title' => __('PayPal Express Checkout Payment Gateway for WooCommerce', 'wt-woocommerce-sequential-order-numbers'),
-            'description' => __('Offer a fast checkout experience to your customers with PayPal Payment Gateway. You can set up the PayPal Express Checkout option on the product pages to reduce the clicks to complete the checkout.', 'wt-woocommerce-sequential-order-numbers'),
-            'image_url' => 'wt-paypal-plugin.png',
-            'premium_url' => 'https://www.webtoffee.com/product/paypal-express-checkout-gateway-for-woocommerce/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=Paypal',
-            'basic_url' => 'https://wordpress.org/plugins/express-checkout-paypal-payment-gateway-for-woocommerce/',
-            'pro_plugin' => 'eh-paypal-express-checkout /eh-paypal-express-checkout.php',
-            'basic_plugin' => 'express-checkout-paypal-payment-gateway-for-woocommerce/express-checkout-paypal-payment-gateway-for-woocommerce.php',
-        ),
-        'stripe_paymet_gateway_plugin' => array(
-            'title' => __('WooCommerce Stripe Payment Gateway', 'wt-woocommerce-sequential-order-numbers'),
-            'description' => __('Ensure a fast and secure checkout experience for your users with WooCommerce Stripe Payment Gateway. Stripe accepts credit/debit cards and offers integrations with Apple Pay, SEPA, Alipay, and more.', 'wt-woocommerce-sequential-order-numbers'),
-            'image_url' => 'stripe-plugin.png',
-            'premium_url' => 'https://www.webtoffee.com/product/woocommerce-stripe-payment-gateway/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=Stripe',
-            'basic_url' => 'https://wordpress.org/plugins/payment-gateway-stripe-and-woocommerce-integration/',
-            'pro_plugin' => 'eh-stripe-payment-gateway/stripe-payment-gateway.php',
-            'basic_plugin' => 'payment-gateway-stripe-and-woocommerce-integration/payment-gateway-stripe-and-woocommerce-integration.php',
-        ),
-        'subscriptions_for_woocommerce_plugin' => array(
-            'title' => __('Subscriptions for WooCommerce', 'wt-woocommerce-sequential-order-numbers'),
-            'description' => __('Enable subscriptions on your WooCommerce store to sell products (physical and digital) and services that require accepting recurring payments. Supports both simple and variable subscription products.', 'wt-woocommerce-sequential-order-numbers'),
-            'image_url' => 'subscription-plugin.png',
-            'premium_url' => 'https://www.webtoffee.com/product/woocommerce-subscriptions/?utm_source=other_solution_page&utm_medium=free_plugin&utm_campaign=Subscriptions',
-            'basic_url' => '',
-            'pro_plugin' => 'xa-woocommerce-subscriptions/xa-woocommerce-subscriptions.php',
-            'basic_plugin' => '',
         ),
         'sequential_order_plugin' => array(
             'title' => __('Sequential Order Numbers for WooCommerce', 'wt-woocommerce-sequential-order-numbers'),

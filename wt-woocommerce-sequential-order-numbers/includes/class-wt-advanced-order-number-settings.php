@@ -247,7 +247,7 @@ class Wt_Advanced_Order_Number_Settings_Page extends WC_Settings_Page {
 				array(
 					'name' => ' ',
 					'type' => 'title',
-					'desc' =>  sprintf(__("Unlock the pro benefits by upgrading to %s Sequential Order Number for WooCommerce Pro%s ", 'wt-woocommerce-sequential-order-numbers'), '<a href="https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/?utm_source=free_plugin_listing&utm_medium=sequential_free&utm_campaign=Sequential_Order_Numbers&utm_content='.WT_SEQUENCIAL_ORDNUMBER_VERSION.'" target="_blank">', '</a>'),
+					'desc' =>  sprintf(__("Unlock the pro benefits by upgrading to %s Sequential Order Number for WooCommerce Pro%s ", 'wt-woocommerce-sequential-order-numbers'), '<a href="https://woocommerce.com/products/webtoffee-sequential-order-numbers/" target="_blank">', '</a>'),
 					'id' => 'wt_sequencial_pro_version_link',
 				),
 				array(
