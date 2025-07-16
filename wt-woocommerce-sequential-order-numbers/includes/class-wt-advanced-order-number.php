@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.7.1';
+            $this->version = '1.7.2';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -517,7 +517,8 @@ class Wt_Advanced_Order_Number {
 
     public function wt_quickpay_order_number_for_api( $order_number, $order, $recurring ) {
 
-        $order_id = (WC()->version < '2.7.0') ? $order->id : $order->get_id();
+        $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
+
 
         $sequence_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
 
@@ -695,7 +696,7 @@ class Wt_Advanced_Order_Number {
                 return ;
             }
 
-            $order_id = (WC()->version < '2.7.0') ? $order->id : $order->get_id();
+            $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
             $order_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
             $increment_counter = !empty((int) get_option('wt_sequence_increment_counter', 1)) ? (int) get_option('wt_sequence_increment_counter', 1) : 1;
             $is_old_order = self::is_old_order($order_id);
@@ -795,7 +796,7 @@ class Wt_Advanced_Order_Number {
 
     public function display_sequence_number($order_number, $order) {
 
-        $order_id = (WC()->version < '2.7.0') ? $order->id : $order->get_id();
+        $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
         $sequential_order_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
         $sequential_order_number = apply_filters('wt_alter_sequence_number',$sequential_order_number,$order_id);
         return ($sequential_order_number) ? $sequential_order_number : $order_number;
@@ -903,9 +904,11 @@ class Wt_Advanced_Order_Number {
             if( Wt_Advanced_Order_Number_Common::is_wc_hpos_enabled() ) {  
                 $order_table = $wpdb->prefix.'wc_orders';
                 $order_meta_table = $wpdb->prefix.'wc_orders_meta';
+                $order_id_column = 'order_id';
             }else{
                 $order_table = $wpdb->prefix.'posts';
                 $order_meta_table = $wpdb->prefix.'postmeta';
+                $order_id_column = 'post_id';
             }
             
             /**
@@ -918,11 +921,11 @@ class Wt_Advanced_Order_Number {
             $search_exact = apply_filters('wt_sequential_search_exact_order_number',false);
 
             if($search_exact){
-                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT order_id FROM `$order_meta_table` WHERE meta_key = %s AND meta_value = %s)",
+                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT $order_id_column FROM `$order_meta_table` WHERE meta_key = %s AND meta_value = %s)",
                 '_order_number',
                 $request['order_number']);
             }else{
-                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT order_id FROM `$order_meta_table` WHERE meta_key = %s AND meta_value LIKE %s)",
+                $where = $wpdb->prepare("SELECT `$order_table`.id FROM `$order_table` WHERE `$order_table`.id in (SELECT $order_id_column FROM `$order_meta_table` WHERE meta_key = %s AND meta_value LIKE %s)",
                 '_order_number',
                 '%' . $wpdb->esc_like($request['order_number']) . '%');
             }
