@@ -1,6 +1,6 @@
 <div class="wt_seq_upgrade_to_pro_bottom_banner">
     <div class="wt_seq_upgrade_to_pro_bottom_banner_hd">
-        <?php _e('Upgrade to Sequential Order Number for WooCommerce Pro to get hold of advanced features.', 'wt-woocommerce-sequential-order-numbers');?>
+        <?php esc_html_e('Upgrade to Sequential Order Number for WooCommerce Pro to get hold of advanced features.', 'wt-woocommerce-sequential-order-numbers');?>
     </div>
     <a class="wt_seq_upgrade_to_pro_bottom_banner_btn" href="https://woocommerce.com/products/webtoffee-sequential-order-numbers/" target="_blank">
         <?php esc_html_e('UPGRADE TO PREMIUM', 'wt-woocommerce-sequential-order-numbers'); ?>
@@ -11,7 +11,10 @@
             { 
                 ?>
                 <div class="wt_seq_upgrade_to_pro_bottom_banner_feature_list">
-                    <?php echo esc_html_e($pro_upgarde_feature,'wt-woocommerce-sequential-order-numbers');?>
+                    <?php 
+                    // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+                    echo esc_html_e($pro_upgarde_feature,'wt-woocommerce-sequential-order-numbers');
+                    ?>
                 </div>
                 <?php
             }

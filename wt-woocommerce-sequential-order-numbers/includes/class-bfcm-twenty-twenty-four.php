@@ -70,18 +70,18 @@ if ( !class_exists( 'Wtso_Bfcm_Twenty_Twenty_Four' ) ) {
                             </div>
                             <div class="wtso-bfcm-banner-body-info">
                                 <div class="never-miss-this-deal">
-                                    <p><?php echo esc_html__( 'Never Miss This Deal', '' ); ?></p>
+                                    <p><?php echo esc_html__( 'Never Miss This Deal', 'wt-woocommerce-sequential-order-numbers' ); ?></p>
                                 </div>
                                 <div class="info">
                                     <p><?php 
-                                        echo sprintf(
-                                                __( 'Your Last Chance to Avail %1$s on WebToffee Plugins. Grab the deal before it`s gone!', '' ), 
-                                                '<span>30% '.__("OFF","").'</span>'
+                                        // translators: %1$s: discount percentage
+                                        echo sprintf( esc_html__( 'Your Last Chance to Avail %1$s on WebToffee Plugins. Grab the deal before it\'s gone!', 'wt-woocommerce-sequential-order-numbers' ), 
+                                                '<span>30% '.esc_html__("OFF", "wt-woocommerce-sequential-order-numbers").'</span>'
                                             );
                                     ?></p>
                                 </div>
                                 <div class="wtso-bfcm-banner-body-button">
-                                    <a href="<?php echo  esc_url(self::$promotion_link); ?>" class="bfcm_cta_button" target="_blank"><?php echo esc_html__( 'View plugins', '' ); ?> <span class="dashicons dashicons-arrow-right-alt"></span></a>
+                                    <a href="<?php echo  esc_url(self::$promotion_link); ?>" class="bfcm_cta_button" target="_blank"><?php echo esc_html__( 'View plugins', 'wt-woocommerce-sequential-order-numbers' ); ?> <span class="dashicons dashicons-arrow-right-alt"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -133,8 +133,10 @@ if ( !class_exists( 'Wtso_Bfcm_Twenty_Twenty_Four' ) ) {
             $screen_id = $screen ? $screen->id : '';
             self::$show_banner = false;
             if ( 'woocommerce_page_wc-settings' === $screen_id ) {
-                $current_tab    = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : '';
-                $current_section = isset( $_GET['section'] ) ? sanitize_text_field( $_GET['section'] ) : '';
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                $current_tab    = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash($_GET['tab']) ) : '';
+                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                $current_section = isset( $_GET['section'] ) ? sanitize_text_field( wp_unslash($_GET['section']) ) : '';
                 if ( 'wts_settings' === $current_tab ) {
                     self::$show_banner = true;
                 }
@@ -150,7 +152,7 @@ if ( !class_exists( 'Wtso_Bfcm_Twenty_Twenty_Four' ) ) {
     		check_ajax_referer( 'wtso_bfcm_twenty_twenty_four_banner_nonce' );
     		if ( isset( $_POST['wtso_bfcm_twenty_twenty_four_banner_action_type'] ) ) {
 	            
-	            $action_type = absint( sanitize_text_field( $_POST['wtso_bfcm_twenty_twenty_four_banner_action_type'] ) );
+	            $action_type = absint( sanitize_text_field( wp_unslash($_POST['wtso_bfcm_twenty_twenty_four_banner_action_type']) ) );
 	            // Current action is allowed?
 	            if ( in_array( $action_type, array( 2, 3 ) ) ) {
 	                update_option( self::$banner_state_option_name, $action_type );

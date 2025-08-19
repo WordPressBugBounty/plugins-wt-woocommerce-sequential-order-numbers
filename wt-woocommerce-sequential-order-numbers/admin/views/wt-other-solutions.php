@@ -34,8 +34,8 @@ if ( ! defined( 'WPINC' ) ) {die;
 <div class="wt-seq-other-solutions">
     <div class="wt_seq_row"> 
         <div clas="wt_seq_headings">
-            <h1 class="wt_seq_heading_1"><?php _e('More Plugins To Make Your Store Stand Out', 'wt-woocommerce-sequential-order-numbers'); ?></h1>
-            <h2 class="wt_seq_heading_2"><?php _e('Check out our other plugins that are perfectly suited for WooCommerce store needs.', 'wt-woocommerce-sequential-order-numbers'); ?></h2>
+            <h1 class="wt_seq_heading_1"><?php esc_html_e('More Plugins To Make Your Store Stand Out', 'wt-woocommerce-sequential-order-numbers'); ?></h1>
+            <h2 class="wt_seq_heading_2"><?php esc_html_e('Check out our other plugins that are perfectly suited for WooCommerce store needs.', 'wt-woocommerce-sequential-order-numbers'); ?></h2>
             <br/>
         </div>
     <div class="wt_seq_column">
@@ -259,7 +259,7 @@ $plugins=array(
                 </div> 
                 <div class="wt_seq_buttons">
                     <div class="wt_seq_premium_button" style="width: 100%;">
-                        <a href="<?php echo esc_url($value['premium_url']); ?>" class="wt_seq_get_premium_btn" target="_blank"><img src="<?php echo esc_url($wf_admin_img_path . '/promote_crown.png');?>" style="width: 10px;height: 10px;"><?php  _e(' Get Premium','wt-woocommerce-sequential-order-numbers'); ?></a>
+                        <a href="<?php echo esc_url($value['premium_url']); ?>" class="wt_seq_get_premium_btn" target="_blank"><img src="<?php echo esc_url($wf_admin_img_path . '/promote_crown.png');?>" style="width: 10px;height: 10px;"><?php  esc_html_e(' Get Premium','wt-woocommerce-sequential-order-numbers'); ?></a>
                     </div> 
                     <?php
                     if(is_plugin_active($value['basic_plugin']))
@@ -267,7 +267,7 @@ $plugins=array(
                     ?>
                     <div class="wt_seq_installed_button">
                         <div class="wt_seq_installed_btn">
-                            <?php _e('Installed','wt-woocommerce-sequential-order-numbers'); ?>
+                            <?php esc_html_e('Installed','wt-woocommerce-sequential-order-numbers'); ?>
                         </div>
                     </div>
                     <?php               
@@ -278,7 +278,7 @@ $plugins=array(
                     <div class="wt_seq_free_button">
                         <a class="wt_seq_free_btn_a" href="<?php echo esc_url($value['basic_url']); ?>" target="_blank">
                             <div class="wt_seq_free_btn">
-                                <?php _e('Get Free Plugin','wt-woocommerce-sequential-order-numbers'); ?>
+                                <?php esc_html_e('Get Free Plugin','wt-woocommerce-sequential-order-numbers'); ?>
                             </div>
                         </a>
                     </div>
