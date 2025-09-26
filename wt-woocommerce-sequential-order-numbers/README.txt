@@ -1,11 +1,11 @@
 === Sequential Order Number for WooCommerce ===
 Contributors: webtoffee
-Version: 1.7.3
+Version: 1.7.4
 Donate link: https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/
 Tags: woocommerce custom order number, woocommerce sequential order number, custom order number, sequential number, sequential order numbers for woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -36,7 +36,7 @@ When you activate the sequential order number plugin, if you have no orders in y
 * Supports WooCommerce custom order numbers
 * Compatible with HPOS
 * Tested OK with PHP 8.2
-* Tested OK with WooCommerce 10.1.0
+* Tested OK with WooCommerce 10.2.1
 
 
 >**Note:** If you like to make any of your other plugins (invoice/payment/shipment) compatible with the Sequential Order Numbers for WooCommerce, please make the below tweak.
@@ -63,19 +63,18 @@ You can also check out this video to get a quick understanding of the plugin.
 For more information about the plugin checkout the [Sequential Order Number for WooCommerce Premium](https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/).
 
 == Compatible Plugins ==
-* <a href="https://www.pluginhive.com/product/woocommerce-shipment-tracking-pro/"> WooCommerce Shipment Tracking Pro by PluginHive</a>
-* [Subscriptions for WooCommerce by WebToffee](https://www.webtoffee.com/product/woocommerce-subscriptions/)
-* [PayPal Plus for WooCommerce
-By Inpsyde GmbH](https://wordpress.org/plugins/woo-paypalplus/)
+* [WooCommerce Shipment Tracking Pro by PluginHive](https://www.pluginhive.com/product/woocommerce-shipment-tracking-pro/)
+* [Subscriptions for WooCommerce by ThemeHigh](https://www.themehigh.com/product/subscriptions-for-woocommerce/)
+* [PayPal Plus for WooCommerce By Inpsyde GmbH](https://wordpress.org/plugins/woo-paypalplus/)
 * [PayPal for WooCommerce By AngellEye](https://www.angelleye.com/product/woocommerce-paypal-plugin/)
 * [WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels By WebToffee](https://wordpress.org/plugins/print-invoices-packing-slip-labels-for-woocommerce/)
 * [WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels (Pro) By WebToffee](https://www.webtoffee.com/product/woocommerce-pdf-invoices-packing-slips/)
-* [PayPal Express Checkout Plugin for WooCommerce By WebToffee](https://www.webtoffee.com/product/paypal-express-checkout-gateway-for-woocommerce/)
+* [PayPal Express Checkout Plugin for WooCommerce By ThemeHigh](https://www.themehigh.com/product/paypal-express-checkout-gateway-for-woocommerce/)
 * [Order Export & Order Import for WooCommerce By WebToffee](https://wordpress.org/plugins/order-import-export-for-woocommerce/)
 * [Mollie Payments for WooCommerce By Mollie](https://wordpress.org/plugins/mollie-payments-for-woocommerce/)
 * [WooCommerce Subscriptions](https://woocommerce.com/products/woocommerce-subscriptions/)
 * [Point of Sale POS for WooCommerce](https://wordpress.org/plugins/point-of-sale-pos-woocommerce/)
-* [WooCommerce Stripe Payment Gateway By WebToffee](https://www.webtoffee.com/product/woocommerce-stripe-payment-gateway/)
+* [WooCommerce Stripe Payment Gateway By ThemeHigh](https://www.themehigh.com/product/woocommerce-stripe-payment-gateway/)
 * [Stripe By WooCommerce](https://woocommerce.com/products/stripe/)
 * [WooCommerce PayPal Payments by WooCommerce](https://wordpress.org/plugins/woocommerce-paypal-payments/)
 * [WooCommerce POS](https://wordpress.org/plugins/woocommerce-pos/)
@@ -147,15 +146,13 @@ Yes. It's possible to add order date prefix.
 
 == Changelog ==
 
-= 1.7.3 2025-08-19 =
-* [Compatibility] - WooCommerce 10.1.0
-* [Update] - Plugin Check Plugin fixes
+= 1.7.4 2025-09-26 =
+* [Compatibility] - WooCommerce 10.2.1
 
 
 [See changelog for all versions](https://plugins.svn.wordpress.org/wt-woocommerce-sequential-order-numbers/trunk/changelog.txt)
 
 == Upgrade Notice ==
 
-= 1.7.3 =
-* [Compatibility] - WooCommerce 10.1.0
-* [Update] - Plugin Check Plugin fixes
+= 1.7.4 =
+* [Compatibility] - WooCommerce 10.2.1

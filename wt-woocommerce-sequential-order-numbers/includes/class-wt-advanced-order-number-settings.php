@@ -282,6 +282,14 @@ class Wt_Advanced_Order_Number_Settings_Page extends WC_Settings_Page {
 		WC_Admin_Settings::output_fields( $settings );
 
 		echo '</div>';
+
+		// WooCommerce save button overlaps the woo review seeking nudge.
+		echo '<style>
+		.woocommerce-save-button {
+			margin-bottom: 30px;
+		}
+		</style>';
+
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if(isset($_GET['page']) && 'wc-settings' === $_GET['page'] && isset($_GET['tab']) && 'wts_settings' === $_GET['tab'] && ((isset($_GET['section']) && '' === $_GET['section'] ) || !isset($_GET['section'])))
         {

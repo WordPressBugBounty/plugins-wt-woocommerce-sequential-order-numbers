@@ -1,6 +1,10 @@
 
 == Changelog ==
 
+= 1.7.3 2025-08-19 =
+* [Compatibility] - WooCommerce 10.1.0
+* [Update] - Plugin Check Plugin fixes
+
 = 1.7.2 2025-07-16 =
 * [Compatibility] - WooCommerce 10.0.2
 
