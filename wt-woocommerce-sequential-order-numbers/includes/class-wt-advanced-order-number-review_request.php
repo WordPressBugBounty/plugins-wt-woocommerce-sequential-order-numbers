@@ -62,9 +62,9 @@ class Wt_Advanced_Order_Number_Review_Request
 			// translators: %1$s: WebToffee link, %2$s: WebToffee link
 			$this->banner_message = sprintf(__('Hey, we at %1$s WebToffee %2$s would like to thank you for using our plugin. We would really appreciate if you could take a moment to drop a quick review that will inspire us to keep going.', 'wt-woocommerce-sequential-order-numbers'), '<a href="https://www.webtoffee.com/" target="_blank">', '</a>');
 			/* button texts */
-			$this->later_btn_text=__("Remind me later", 'wt-woocommerce-sequential-order-numbers');
-			$this->never_btn_text=__("Not interested", 'wt-woocommerce-sequential-order-numbers');
-			$this->review_btn_text=__("Review now", 'wt-woocommerce-sequential-order-numbers');
+			$this->later_btn_text=__('Remind me later', 'wt-woocommerce-sequential-order-numbers');
+			$this->never_btn_text=__('Not interested', 'wt-woocommerce-sequential-order-numbers');
+			$this->review_btn_text=__('Review now', 'wt-woocommerce-sequential-order-numbers');
 	}
 	
 	/**

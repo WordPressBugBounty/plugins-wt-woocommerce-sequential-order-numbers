@@ -220,6 +220,15 @@ $plugins=array(
             'pro_plugin' => 'wt-woocommerce-sequential-order-numbers-pro/wt-advanced-order-number-pro.php',
             'basic_plugin' => 'wt-woocommerce-sequential-order-numbers/wt-advanced-order-number.php',
         ),
+        'accssibility_plus' => array(
+            'title' => __('Accessibility Tool Kit: WP Accessibility for WCAG, Section 508, ADA, EAA Compliance', 'wt-woocommerce-sequential-order-numbers'),
+            'description' => __('Build an accessible WordPress site that works for everyone. Scan for accessibility issues, get fix recommendations, and ensure WCAG compliance, all without writing code. Inclusive web design made simple.', 'wt-woocommerce-sequential-order-numbers'),
+            'image_url' => 'accessibility-plus.png',
+            'premium_url' => 'https://www.webyes.com/',
+            'basic_url' => 'https://wordpress.org/plugins/accessibility-plus/',
+            'pro_plugin' => 'accessibility-plus-pro/accessibility-plus-pro.php',
+            'basic_plugin' => 'accessibility-plus/accessibility.php',
+        ),
     );
 
     foreach ($plugins as $key => $value)

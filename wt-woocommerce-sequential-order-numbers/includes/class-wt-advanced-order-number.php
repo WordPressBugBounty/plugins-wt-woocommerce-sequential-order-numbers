@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.7.4';
+            $this->version = '1.7.7';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -510,7 +510,7 @@ class Wt_Advanced_Order_Number {
 
     public function wt_quickpay_order_number_for_api( $order_number, $order, $recurring ) {
 
-        $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
+        $order_id = $order->get_id();
 
 
         $sequence_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
@@ -690,7 +690,7 @@ class Wt_Advanced_Order_Number {
                 return ;
             }
 
-            $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
+            $order_id = $order->get_id();
             $order_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
             $increment_counter = !empty((int) get_option('wt_sequence_increment_counter', 1)) ? (int) get_option('wt_sequence_increment_counter', 1) : 1;
             $is_old_order = self::is_old_order($order_id);
@@ -712,18 +712,16 @@ class Wt_Advanced_Order_Number {
             }
             $lockFilePath	= $lockFolderPath.'/wt_sequential_order_number.lock';
             // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- No suitable alternative.
-            $file 			= fopen($lockFilePath,"w");
+            $file 			= fopen($lockFilePath,"c");
 
-            if (flock($file,LOCK_EX)) {
+            if ( $this->wt_safe_file_lock($file) ) {
 
                 if (empty($order_number) && false === $is_old_order) { 
 
                     $prefix = self::get_sequence_prefix($order_id);
 
                     $last_order_num = get_option('wt_last_order_number', 0);
-
-                    
-                        
+  
                     if( Wt_Advanced_Order_Number_Common::is_wc_hpos_enabled() ) {  
                         $table_name = $wpdb->prefix.'wc_orders_meta';
                         $query_array= array( "INSERT INTO {$table_name} (order_id, meta_key, meta_value) VALUES (%d,%s,%s)" );
@@ -758,13 +756,16 @@ class Wt_Advanced_Order_Number {
                     }
                     foreach ($query_array as $sql) {
                         // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
-                        $query = $wpdb->prepare($sql, $post_id, '_order_number', $next_order_number); 
-                        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+                        $query = $wpdb->prepare($sql, $post_id, '_order_number', $next_order_number);
+                        // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter
                         $res = $wpdb->query($query);
                     }
                     $order->save();
                 } 
-                flock($file,LOCK_UN);
+                if ( is_resource( $file ) ) {
+                    flock($file,LOCK_UN);
+                    fclose($file); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- No suitable alternative.
+                }
             } else {
 
                 sleep(2);
@@ -791,7 +792,7 @@ class Wt_Advanced_Order_Number {
 
     public function display_sequence_number($order_number, $order) {
 
-        $order_id = version_compare( WC()->version, '2.7.0', '<' ) ? $order->id : $order->get_id();
+        $order_id = $order->get_id();
         $sequential_order_number = Wt_Advanced_Order_Number_Common::get_order_meta($order_id, '_order_number');
         $sequential_order_number = apply_filters('wt_alter_sequence_number',$sequential_order_number,$order_id);
         return ($sequential_order_number) ? $sequential_order_number : $order_number;
@@ -926,7 +927,7 @@ class Wt_Advanced_Order_Number {
                 '_order_number',
                 '%' . $wpdb->esc_like($request['order_number']) . '%');
             }
-            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+            // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter
             $results = $wpdb->get_results( $where );
             $order_ids = array_column($results, 'id');
             if( !empty($order_ids) && is_array($order_ids)){
@@ -937,5 +938,25 @@ class Wt_Advanced_Order_Number {
 
         }
         return $query;
+    }
+    /**
+     * @since 1.7.5.1
+     * Safely lock a file using flock.
+     *
+     * @param resource $file File handle.
+     * @return bool True if lock was acquired, false otherwise.
+     */
+    public function wt_safe_file_lock($file) {
+       // Detect if environment supports flock
+        $can_flock = !defined('WPCOM_IS_VIP_ENV') || !WPCOM_IS_VIP_ENV;
+        // Alternatively, allow override via filter
+        $can_flock = apply_filters('webtoffee_use_flock', $can_flock);
+
+        if ($can_flock && is_resource($file)) {
+            // Use @ to suppress warnings in unsupported contexts
+            return @flock($file, LOCK_EX);
+        }
+        // Fallback: no locking
+        return true;
     }
 }

@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
   $wf_admin_img_path=WT_SEQUENCIAL_ORDNUMBER_URL . 'admin/images/';
   $seq_order_logo_url=WT_SEQUENCIAL_ORDNUMBER_URL.'assets/images/logo_seq.png';
 ?>
@@ -257,7 +262,7 @@ if (Wtso_Bfcm_Twenty_Twenty_Four::is_bfcm_season()) { ?>
       <li><?php echo esc_html__('More order number templates.','wt-woocommerce-sequential-order-numbers'); ?></li>
     </ul>
     <div class="wt-seqpro-btn-wrapper">
-        <a href="https://woocommerce.com/products/webtoffee-sequential-order-numbers/" class="wt-seqpro-blue-btn" target="_blank"><?php echo esc_html__('UPGRADE TO PREMIUM','wt-woocommerce-sequential-order-numbers'); ?></a>
+        <a href="https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/?utm_source=free_plugin_sidebar&utm_medium=sequential_free&utm_campaign=Sequential_Order_Numbers&utm_content=<?php echo esc_attr(WT_SEQUENCIAL_ORDNUMBER_VERSION);?>" class="wt-seqpro-blue-btn" target="_blank"><?php echo esc_html__('UPGRADE TO PREMIUM','wt-woocommerce-sequential-order-numbers'); ?></a>
       </div>
   </div>
 </div>
