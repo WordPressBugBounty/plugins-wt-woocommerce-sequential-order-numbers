@@ -15,13 +15,13 @@
  * Plugin Name:       Sequential Order Numbers for WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/wt-woocommerce-sequential-order-numbers/
  * Description:       Automatically sets sequential order number for WooCommerce orders placed by either customers or by admin through backend.
- * Version:           1.7.7
+ * Version:           1.7.8
  * Author:            WebToffee
  * Author URI:        https://www.webtoffee.com/
  * License:           GPLv3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * WC requires at least: 3.0.1
- * WC tested up to:   10.4.3
+ * WC tested up to:   10.7
  * Text Domain:       wt-woocommerce-sequential-order-numbers
  * Domain Path:       /languages
  */
@@ -62,7 +62,7 @@ if(!$wt_seq_order_no_plugin_conflict)
  * Rename this for your plugin and update it as you release new versions.
  */
 if (!defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
-    define('WT_SEQUENCIAL_ORDNUMBER_VERSION', '1.7.7');
+    define('WT_SEQUENCIAL_ORDNUMBER_VERSION', '1.7.8');
 }
 
 if (!defined('WT_SEQUENCIAL_ORDNUMBER_BASE_NAME')) {
@@ -83,11 +83,14 @@ if(!function_exists('activate_wt_advanced_order_number'))
 {
     function activate_wt_advanced_order_number() 
     {
+        wt_sequential_order_number_activation_check();
     	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wt-advanced-order-number-activator.php';
     	Wt_Advanced_Order_Number_Activator::activate();
     }
     register_activation_hook( __FILE__, 'activate_wt_advanced_order_number' );
 }
+
+require_once plugin_dir_path( __FILE__ ) . 'wt-advanced-order-number-welcome-script.php';
 
 /**
  * The code that runs during plugin deactivation.
