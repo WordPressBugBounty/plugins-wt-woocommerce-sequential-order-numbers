@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <div class="wt_seq_upgrade_to_pro_bottom_banner">
     <div class="wt_seq_upgrade_to_pro_bottom_banner_hd">
         <?php esc_html_e('Upgrade to Sequential Order Number for WooCommerce Pro to get hold of advanced features.', 'wt-woocommerce-sequential-order-numbers');?>

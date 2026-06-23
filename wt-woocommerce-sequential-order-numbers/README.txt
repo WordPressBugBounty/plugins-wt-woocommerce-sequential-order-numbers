@@ -1,11 +1,11 @@
 === Sequential Order Number for WooCommerce ===
 Contributors: webtoffee
-Version: 1.7.8
+Version: 1.7.9
 Donate link: https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/
 Tags: woocommerce custom order number, woocommerce sequential order number, custom order number, sequential number, sequential order numbers for woocommerce
 Requires at least: 3.0.1
 Tested up to: 7.0
-Stable tag: 1.7.8
+Stable tag: 1.7.9
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -43,7 +43,7 @@ To get a complete walkthrough of the WooCommerce sequential order plugin setting
 * Supports WooCommerce custom order numbers
 * Compatible with HPOS
 * Tested OK with PHP 8.2
-* Tested OK with WooCommerce 10.7
+* Tested OK with WooCommerce 10.8.1
 
 To learn about the installation and setup of this free sequential order plugin, visit the <a rel="nofollow" href="https://www.webtoffee.com/sequential-order-number-woocommerce-plugin-user-guide/" target="_blank" > WooCommerce sequential order number plugin</a> documentation. 
 
@@ -176,18 +176,16 @@ Yes. It's possible to add order date prefix.
 
 == Changelog ==
 
-= 1.7.8 2026-04-22 =
+= 1.7.9 2026-06-23 =
 
-* [Add] - Redirect users to the plugin settings page after activation
-* [Compatibility] - Tested OK with WooCommerce 10.7
-* [Compatibility] - Tested OK with WordPress 7.0
+* [Compatibility] - Tested OK with WooCommerce 10.8.1
+* [Compatibility] - Tested OK with Plugin Check plugin v1.9.0
 
 [See changelog for all versions](https://plugins.svn.wordpress.org/wt-woocommerce-sequential-order-numbers/trunk/changelog.txt)
 
 == Upgrade Notice ==
 
-= 1.7.8 =
+= 1.7.9 =
 
-* [Add] - Redirect users to the plugin settings page after activation
-* [Compatibility] - Tested OK with WooCommerce 10.7
-* [Compatibility] - Tested OK with WordPress 7.0
+* [Compatibility] - Tested OK with WooCommerce 10.8.1
+* [Compatibility] - Tested OK with Plugin Check plugin v1.9.0

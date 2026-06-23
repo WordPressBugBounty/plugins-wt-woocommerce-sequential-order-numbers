@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.7.8';
+            $this->version = '1.7.9';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -153,12 +153,14 @@ class Wt_Advanced_Order_Number {
         add_filter('woocommerce_order_number', array($this, 'display_sequence_number'), PHP_INT_MAX, 2);
 
         // WooCommerce QuickPay support
-        if(in_array( 'woocommerce-quickpay/woocommerce-quickpay.php',apply_filters('active_plugins',get_option('active_plugins'))) || array_key_exists( 'woocommerce-quickpay/woocommerce-quickpay.php', apply_filters( 'active_plugins', get_site_option( 'active_sitewide_plugins', array() ) ) )) 
+        $quickpay_sitewide_plugins = apply_filters( 'active_plugins', get_site_option( 'active_sitewide_plugins', array() ) );
+        if(in_array( 'woocommerce-quickpay/woocommerce-quickpay.php',apply_filters('active_plugins',get_option('active_plugins'))) || (is_array($quickpay_sitewide_plugins) && array_key_exists( 'woocommerce-quickpay/woocommerce-quickpay.php', $quickpay_sitewide_plugins ))) 
         {
             add_filter('woocommerce_quickpay_order_number_for_api', array( $this, 'wt_quickpay_order_number_for_api' ), 100, 3);
         }
         // WooCommerce Amazon Pay support
-        if(in_array( 'woocommerce-gateway-amazon-payments-advanced/woocommerce-gateway-amazon-payments-advanced.php',apply_filters('active_plugins',get_option('active_plugins'))) || array_key_exists( 'woocommerce-gateway-amazon-payments-advanced/woocommerce-gateway-amazon-payments-advanced.php', apply_filters( 'active_plugins', get_site_option( 'active_sitewide_plugins', array() ) ) )) 
+        $amazon_pay_sitewide_plugins = apply_filters( 'active_plugins', get_site_option( 'active_sitewide_plugins', array() ) );
+        if(in_array( 'woocommerce-gateway-amazon-payments-advanced/woocommerce-gateway-amazon-payments-advanced.php',apply_filters('active_plugins',get_option('active_plugins'))) || (is_array($amazon_pay_sitewide_plugins) && array_key_exists( 'woocommerce-gateway-amazon-payments-advanced/woocommerce-gateway-amazon-payments-advanced.php', $amazon_pay_sitewide_plugins ))) 
         {
             add_filter( 'woocommerce_amazon_pa_merchant_metadata_reference_id', array( $this, 'wt_amazon_pay_order_number'), 10, 1 );
             add_filter( 'woocommerce_amazon_pa_merchant_metadata_reference_id_reverse',array( $this, 'wt_order_id_from_order_number'), 10, 1 );

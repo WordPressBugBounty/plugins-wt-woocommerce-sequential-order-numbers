@@ -1,4 +1,7 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 $date_frmt_tooltip= esc_html__('Click to select the date format','wt-woocommerce-sequential-order-numbers');?>
 <div class="wt_seq_num_frmt_hlp wt_seq_num_popup">
 	<div class="wt_seq_num_popup_hd">
