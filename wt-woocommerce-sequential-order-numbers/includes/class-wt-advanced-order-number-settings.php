@@ -268,6 +268,20 @@ class Wt_Advanced_Order_Number_Settings_Page extends WC_Settings_Page {
 	 */
 	public function output() {
 
+		/*
+		 *	The other solutions section is a full-width layout of its own and registers
+		 *	no settings fields, so it renders alone: no branding header, no 75%-width
+		 *	float wrapper, no empty output_fields() call. Returning early also skips the
+		 *	three section checks below, none of which match this section anyway.
+		 *
+		 *	@since 1.8.0
+		 */
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['page'] ) && 'wc-settings' === $_GET['page'] && isset( $_GET['tab'] ) && 'wts_settings' === $_GET['tab'] && isset( $_GET['section'] ) && 'other_solution' === $_GET['section'] ) {
+			do_action( 'wt_sequential_other_solution_section' );
+			return;
+		}
+
 		$webtoffee_logo='<img src="'.WT_SEQUENCIAL_ORDNUMBER_URL.'assets/images/wt_logo.png" style="" />&nbsp;';
 		$settings = $this->get_settings();
  		echo'<div class="wfte_branding" style="float:right; text-align:end;">
@@ -313,12 +327,7 @@ class Wt_Advanced_Order_Number_Settings_Page extends WC_Settings_Page {
 			do_action('wt_sequential_free_vs_pro_section_bottom');
 		}
 
-		// Add other solutions page.
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		if(isset($_GET['page']) && 'wc-settings' === $_GET['page'] && isset($_GET['tab']) && 'wts_settings' === $_GET['tab'] && isset($_GET['section']) && 'other_solution' === $_GET['section'] )
-        {
-			do_action('wt_sequential_other_solution_section');
-		}
+		// The other solutions section returned early at the top of this method.
 		
 	}
 

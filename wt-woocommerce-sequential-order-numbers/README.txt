@@ -1,11 +1,11 @@
 === Sequential Order Number for WooCommerce ===
 Contributors: webtoffee
-Version: 1.7.9
+Version: 1.8.0
 Donate link: https://www.webtoffee.com/product/woocommerce-sequential-order-numbers/
 Tags: woocommerce custom order number, woocommerce sequential order number, custom order number, sequential number, sequential order numbers for woocommerce
-Requires at least: 3.0.1
+Requires at least: 5.3
 Tested up to: 7.0
-Stable tag: 1.7.9
+Stable tag: 1.8.0
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -43,7 +43,7 @@ To get a complete walkthrough of the WooCommerce sequential order plugin setting
 * Supports WooCommerce custom order numbers
 * Compatible with HPOS
 * Tested OK with PHP 8.2
-* Tested OK with WooCommerce 10.8.1
+* Tested OK with WooCommerce 11.0.0
 
 To learn about the installation and setup of this free sequential order plugin, visit the <a rel="nofollow" href="https://www.webtoffee.com/sequential-order-number-woocommerce-plugin-user-guide/" target="_blank" > WooCommerce sequential order number plugin</a> documentation. 
 
@@ -125,7 +125,7 @@ Key features of the plugin include customizable cookie banners, automated cookie
 
 = Minimum Requirements =
 
-WordPress version 3.0.1 or higher
+WordPress version 5.3 or higher
 PHP version 5.6 or higher
 
 = Steps to install the WooCommerce Sequential Order Number plugin =
@@ -176,16 +176,18 @@ Yes. It's possible to add order date prefix.
 
 == Changelog ==
 
-= 1.7.9 2026-06-23 =
+= 1.8.0 2026-08-05 =
 
-* [Compatibility] - Tested OK with WooCommerce 10.8.1
-* [Compatibility] - Tested OK with Plugin Check plugin v1.9.0
+* [Fix] - Regenerated the outdated language template (.pot) to keep translations in sync.
+* [Compatibility] - Tested OK with WooCommerce 11.0.0
+* [Compatibility] - Tested OK with Plugin Check plugin v2.0.0
 
 [See changelog for all versions](https://plugins.svn.wordpress.org/wt-woocommerce-sequential-order-numbers/trunk/changelog.txt)
 
 == Upgrade Notice ==
 
-= 1.7.9 =
+= 1.8.0 =
 
-* [Compatibility] - Tested OK with WooCommerce 10.8.1
-* [Compatibility] - Tested OK with Plugin Check plugin v1.9.0
+* [Fix] - Regenerated the outdated language template (.pot) to keep translations in sync.
+* [Compatibility] - Tested OK with WooCommerce 11.0.0
+* [Compatibility] - Tested OK with Plugin Check plugin v2.0.0
