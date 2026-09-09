@@ -358,4 +358,4 @@ class Wt_Advanced_Order_Number_Settings_Page extends WC_Settings_Page {
 
 endif;
 
-new Wt_Advanced_Order_Number_Settings_Page;
+return new Wt_Advanced_Order_Number_Settings_Page();

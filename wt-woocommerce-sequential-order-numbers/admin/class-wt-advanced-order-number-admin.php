@@ -40,6 +40,8 @@ class Wt_Advanced_Order_Number_Admin {
             'msgs'=>array(
                 'prev'=>__('Preview : ','wt-woocommerce-sequential-order-numbers'),
                 'pro_text'=>'<span class="wt_pro_text" style="color:#39b54a;font-size:11px;">'.__(' (Pro) ','wt-woocommerce-sequential-order-numbers').'</span>',
+                'warning' => __( 'This will affect all existing and upcoming orders', 'wt-woocommerce-sequential-order-numbers' ),
+                'confirm' => __( 'This will affect all the orders, Are you sure you want to proceed?', 'wt-woocommerce-sequential-order-numbers' ),
             ),
             'serch_by_order_number' => get_option( 'wt_custom_order_number_search', 'yes' ),
         );

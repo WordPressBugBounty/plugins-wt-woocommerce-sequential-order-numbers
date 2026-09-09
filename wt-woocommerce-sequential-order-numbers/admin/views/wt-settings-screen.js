@@ -395,6 +395,32 @@
 			wt_seq_popup.hidePopup();
 			wt_sample_order_number();
 		});
+		/* Confirm before the format is applied to every existing order. */
+		$('p.submit').on('click',function(e){
+			if(!$('#wt_renumerate').is(':checked'))
+			{
+				return;
+			}
+			var proceed=confirm(wt_seq_settings.msgs.confirm);
+			if(!proceed)
+			{
+				e.preventDefault();
+				$('#wt_renumerate').prop('checked',false);
+			}
+		});
+		/* Warn on ticking the box only. Not rendered on load, so it clears after saving. */
+		var wt_renumerate_warning=wt_seq_settings.msgs.warning;
+		var wt_renumerate_label=$('#wt_renumerate').closest('label');
+		function wt_seq_toggle_renumerate_warning()
+		{
+			/* Remove rather than hide, so repeated toggling cannot stack duplicates. */
+			$('p.wt_warning_text').remove();
+			if(wt_renumerate_label.length>0 && $('#wt_renumerate').is(':checked'))
+			{
+				$('<p class="wt_warning_text"><span >&#9888;</span><span style="color:red;">'+wt_renumerate_warning+'</span></p>').insertAfter(wt_renumerate_label);
+			}
+		}
+		$('#wt_renumerate').on('change',wt_seq_toggle_renumerate_warning);
 		var free_order_tr=$('#wt_sequential_free_orders').parents('tr');
 		var increment_tr=$('#wt_sequence_increment_counter').parents('tr');
 		var reset_tr=$('#wt_sequential_reset_counter').parents('tr');

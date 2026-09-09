@@ -2,21 +2,20 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sequential Order Numbers for WooCommerce 1.7.9\n"
+"Project-Id-Version: Sequential Order Numbers for WooCommerce 1.8.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wt-woocommerce-sequential-order-numbers\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-04 13:25+0530\n"
+"POT-Creation-Date: 2026-09-08T10:05:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wt-woocommerce-sequential-order-numbers\n"
 
 #. Plugin Name of the plugin
 #: wt-advanced-order-number.php
-#: admin/views/wt-other-solutions.php:215
 msgid "Sequential Order Numbers for WooCommerce"
 msgstr ""
 
@@ -49,21 +48,29 @@ msgstr ""
 msgid " (Pro) "
 msgstr ""
 
-#: admin/class-wt-advanced-order-number-admin.php:61
+#: admin/class-wt-advanced-order-number-admin.php:43
+msgid "This will affect all existing and upcoming orders"
+msgstr ""
+
+#: admin/class-wt-advanced-order-number-admin.php:44
+msgid "This will affect all the orders, Are you sure you want to proceed?"
+msgstr ""
+
+#: admin/class-wt-advanced-order-number-admin.php:63
 #: includes/class-wt-advanced-order-number-settings.php:54
 #: includes/class-wt-advanced-order-number-settings.php:111
 msgid "Settings"
 msgstr ""
 
-#: admin/class-wt-advanced-order-number-admin.php:62
+#: admin/class-wt-advanced-order-number-admin.php:64
 msgid "Support"
 msgstr ""
 
-#: admin/class-wt-advanced-order-number-admin.php:63
+#: admin/class-wt-advanced-order-number-admin.php:65
 msgid "Review"
 msgstr ""
 
-#: admin/class-wt-advanced-order-number-admin.php:64
+#: admin/class-wt-advanced-order-number-admin.php:66
 msgid "Premium Upgrade"
 msgstr ""
 
@@ -177,6 +184,7 @@ msgid "Sequential Order Number for WooCommerce Pro"
 msgstr ""
 
 #: admin/views/wt-goto-pro.php:247
+#: admin/views/wt-other-solutions.php:442
 msgid "30 Day Money Back Guarantee"
 msgstr ""
 
@@ -217,180 +225,455 @@ msgstr ""
 msgid "More order number templates."
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:37
-msgid "More Plugins To Make Your Store Stand Out"
+#: admin/views/wt-other-solutions.php:12
+msgid "E-commerce Promotions"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:38
-msgid "Check out our other plugins that are perfectly suited for WooCommerce store needs."
+#: admin/views/wt-other-solutions.php:13
+msgid "Create and run successful promotional campaigns with the best marketing tools for WooCommerce"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:50
-msgid "WooCommerce PDF Invoices, Packing Slips and Credit Notes"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:51
-msgid "Easily generate & print fully customized PDF Invoices, Packing Slips, and Credit Notes for your orders. Automatically send the documents to the recipients by attaching them to the order status emails."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:59
-msgid "WooCommerce Shipping Labels, Dispatch Labels and Delivery Notes"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:60
-msgid "Automatically generate WooCommerce Shipping Labels, Dispatch Labels, and Delivery Notes with custom settings and layouts. Customize the label sizes and add extra product or order fields as required."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:68
-msgid "WooCommerce Picklists"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:69
-msgid "Customize, generate and print WooCommerce picklists for all orders on your store and automatically attach them to the order status emails. Add product variation data and other fields to the document."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:77
-msgid "WooCommerce Proforma Invoices"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:78
-msgid "Automate the generation of WooCommerce proforma invoices when new orders are placed and send them to your customers via order emails. Customize the layout and content of the invoice as per your needs."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:86
-msgid "WooCommerce Address Labels"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:87
-msgid "Generate address labels for all orders in your store and easily print them in bulk. Customize the label layout and create labels of different types (shipping, billing, return, from address) with ease."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:95
-msgid "WooCommerce Product Feed & Sync Manager"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:96
-msgid "Generate WooCommerce product feeds for Google Merchant Center and Facebook Business Manager. Use the Facebook catalog sync manager to sync WooCommerce products with Facebook and Instagram shops."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:103
-msgid "Woocommerce Request a Quote"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:104
-msgid "Configure a fully optimized WooCommerce quote request set up in your store. Allow customers to request quotes and store managers to respond to them. Hide product prices, set up email alerts, and more."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:112
-msgid "WooCommerce Product Recommendations"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:113
-msgid "Generate Intelligent Product Recommendations For Your WooCommerce Store. Offer WooCommerce smart product recommendations to your customers & maximize the average cart value."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:121
-msgid "WooCommerce Gift Cards"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:122
-msgid "Create and manage advanced gift cards for WooCommerce stores. Enable your customers to buy, redeem, and share gift cards from your store."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:130
-msgid "Frequently Bought Together for WooCommerce"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:131
-msgid "Boost the visibility of the products by displaying them as ‘Frequently bought together’ items in your store. You may also set up discounts for Frequently Bought Together bundles with this plugin."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:139
-msgid "GDPR Cookie Consent Plugin (CCPA Ready)"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:140
-msgid "The plugin helps you get compliant with GDPR, CCPA, and other major cookie laws. You can create and manage cookie consent banners, scan website cookies, and generate cookie policies with this plugin."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:148
-msgid "WooCommerce PDF Invoices, Packing Slips, Delivery Notes and Shipping Labels"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:149
-msgid "Generate, customize, and manage WooCommerce documents including PDF invoices, packing slips, delivery notes, shipping labels, address labels, and other shipping documents using a single plugin."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:157
-msgid "Product Import Export Plugin For WooCommerce"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:158
-msgid "Seamlessly import/export your WooCommerce products including simple, variable, custom products and subscriptions. You may also import and export product images, tags, categories, reviews, and ratings."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:166
-msgid "WordPress Users & WooCommerce Customers Import Export"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:167
-msgid "Easily import and export your WordPress users and WooCommerce customers using the Import Export plugin for WooCommerce. The plugin supports the use of CSV, XML, TSV, XLS, and XLSX file formats."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:175
-msgid "Order, Coupon, Subscription Export Import for WooCommerce"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:176
-msgid "Export and Import your WooCommerce orders, subscriptions, and discount coupons using a single Import Export plugin. You may customize the export and import files with advanced filters and settings."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:184
-msgid "Import Export Suite for WooCommerce"
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:185
-msgid "An all-in-one plugin to import and export WooCommerce store data. You can import and export products, product reviews, orders, customers, discount coupons, and subscriptions using this single plugin."
-msgstr ""
-
-#: admin/views/wt-other-solutions.php:197
+#: admin/views/wt-other-solutions.php:19
 msgid "Smart Coupons for WooCommerce"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:198
-msgid "Create coupons to offer discounts and free products to your customers with Smart Coupons for WooCommerce. You can set up BOGO coupons, giveaways, gift cards, store credits, and more with this plugin."
+#: admin/views/wt-other-solutions.php:23
+msgid "Advanced BOGO Coupons"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:206
+#: admin/views/wt-other-solutions.php:24
+msgid "Offer store credits"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:25
+msgid "Create attractive gift cards"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:32
 msgid "URL Coupons for WooCommerce"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:207
-msgid "Generate custom URLs and QR codes for every discount coupon in your WooCommerce store. These unique coupons are easy to share and can even be set to add new products to the cart upon application."
+#: admin/views/wt-other-solutions.php:36
+msgid "Generate custom coupon URLs"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:216
-msgid "Number your WooCommerce orders in a custom, sequential & manageable format. The Sequential Order Number plugin lets your orders follow a custom & unique numbering sequence suitable for your business."
+#: admin/views/wt-other-solutions.php:37
+msgid "Set up a redirect page"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:224
-msgid "Accessibility Tool Kit: WP Accessibility for WCAG, Section 508, ADA, EAA Compliance"
+#: admin/views/wt-other-solutions.php:38
+msgid "Automatically add products"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:225
-msgid "Build an accessible WordPress site that works for everyone. Scan for accessibility issues, get fix recommendations, and ensure WCAG compliance, all without writing code. Inclusive web design made simple."
+#: admin/views/wt-other-solutions.php:44
+msgid "WooCommerce Product Recommendations"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:271
-msgid " Get Premium"
+#: admin/views/wt-other-solutions.php:48
+msgid "Automatically generate suggestions based on order history"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:279
-msgid "Installed"
+#: admin/views/wt-other-solutions.php:49
+msgid "Display recommended products on the product pages"
 msgstr ""
 
-#: admin/views/wt-other-solutions.php:290
-msgid "Get Free Plugin"
+#: admin/views/wt-other-solutions.php:50
+msgid "Multiple product recommendation templates"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:57
+msgid "WooCommerce Coupon Generator"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:61
+msgid "Bulk generate WooCommerce coupons"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:62
+msgid "Bulk export WooCommerce coupons to CSV"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:63
+msgid "Add usage restrictions to coupons"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:69
+msgid "WooCommerce Gift Cards"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:73
+msgid "Create unlimited gift cards"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:74
+msgid "Email gift cards to customers"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:75
+msgid "Provide refunds to store credit"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:76
+msgid "20+ predefined gift card templates"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:86
+msgid "ECommerce Marketing Automation App"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:88
+msgid "Create signup forms, popups, and automated email campaigns with pre-built workflow templates to capture leads, recover abandoned carts, and grow sales."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:95
+msgid "Promotion Bundle"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:96
+msgid "WooCommerce Promotion Bundle"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:98
+msgid "Make powerful promotional campaigns with our WooCommerce promotion bundle. Create coupon promotions, set up gift cards, and implement popular product recommendation strategies."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:100
+msgid "Smart Coupons"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:101
+msgid "Product recommendation"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:102
+msgid "Gift cards"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:106
+#: admin/views/wt-other-solutions.php:374
+msgid "Save up to 30% off"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:111
+msgid "Privacy Compliance"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:112
+msgid "Ensure compliance with major cookie laws, including, GDPR, CCPA, LGPD, CNIL, and more."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:116
+msgid "GDPR Cookie Consent Plugin (CCPA Ready)"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:122
+msgid "This Google-certified CMP lets you create a customizable cookie banner, manage user consent, and ensure global privacy compliance with automatic script blocking."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:127
+msgid "EU Order Withdrawal Button Plugin for WooCommerce"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:134
+msgid "Add \"Request Withdrawal\" button to WooCommerce"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:135
+msgid "Supports guest withdrawal option"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:136
+msgid "Two-step confirmation to prevent errors"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:137
+msgid "Full or partial order withdrawal support"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:138
+msgid "Dedicated admin dashboard for all requests"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:139
+msgid "Send email confirmation to customers"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:150
+msgid "Data Import & Export"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:151
+msgid "The best-in-class import, export, and migration solutions for your WooCommerce data."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:157
+msgid "Product Import Export Plugin"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:161
+#: admin/views/wt-other-solutions.php:174
+#: admin/views/wt-other-solutions.php:187
+#: admin/views/wt-other-solutions.php:213
+msgid "Supports Excel, XML, CSV, and TSV file formats"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:162
+#: admin/views/wt-other-solutions.php:175
+#: admin/views/wt-other-solutions.php:188
+msgid "Schedule automated import and export"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:163
+msgid "Support for multiple product types"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:170
+msgid "Order, Coupon, Subscription Export Import"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:176
+msgid "Email customers on order status change"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:183
+msgid "User Import Export Plugin"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:189
+msgid "Customize and send emails to new users on import"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:196
+msgid "Product Feed & Sync Manager"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:200
+msgid "Generate WooCommerce product feeds for Google Shopping, Facebook Shop, and Instagram Shop"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:201
+msgid "Supports 25+ sales channels and marketplaces"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:208
+msgid "Import Export Suite for WooCommerce"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:212
+msgid "Import/export Products, Orders, Subscriptions, Coupons, Customers, WordPress Users, Categories & Tags, Reviews"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:231
+msgid "Accounting & Invoicing"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:232
+msgid "Automatically generate professional WooCommerce invoices and documents for all your orders."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:236
+msgid "PDF Invoices, Packing Slips, & Credit Notes"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:242
+msgid "Automatically generate, customize, and manage professional WooCommerce invoices, packing slips, and credit notes with advanced automation and tax compliance features."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:250
+msgid "Shipping Labels, Dispatch Labels, & Delivery Notes"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:254
+msgid "Create delivery notes, shipping & dispatch labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:255
+msgid "Enable customers to print the documents from order emails"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:256
+msgid "Customize shipping label size"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:263
+msgid "WooCommerce Picklists plugin"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:267
+msgid "Bulk print picklists from the admin order page"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:268
+msgid "Automatically email picklists based on order status"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:269
+msgid "Create or customize picklist templates"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:276
+msgid "Customizer for WooCommerce PDF Invoices"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:280
+msgid "Drag-and-drop easy customization"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:281
+msgid "Customize individual elements using block editors"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:282
+msgid "Advanced visual and code editor"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:289
+msgid "WooCommerce Address Labels plugin"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:293
+msgid "Generate 'Shipping Address', 'Billing Address', 'From Address', and 'Return Address' labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:294
+msgid "Customize label sizes"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:295
+msgid "Bulk print address labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:302
+#: admin/views/wt-other-solutions.php:370
+msgid "Proforma Invoice"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:306
+msgid "Create proforma invoices automatically"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:307
+msgid "Pre-built proforma invoice layouts"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:308
+msgid "Attach proforma invoice PDF to order emails"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:315
+msgid "QR Code Add-on for WooCommerce PDF Invoices"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:319
+msgid "Assign QR codes to all generated invoices"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:320
+msgid "Create QR code that reads order or invoice number"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:321
+msgid "Add custom data to invoices"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:328
+msgid "WooCommerce Request a Quote"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:332
+msgid "Add quote button to the product & shop pages"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:333
+msgid "Enable quotation request for selected products"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:334
+msgid "Automatically send quotes to users"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:341
+msgid "Sequential Order Numbers"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:345
+msgid "Auto reset sequence per month/year etc"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:346
+msgid "Add a custom suffix for order numbers"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:347
+msgid "Date suffix in order numbers"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:358
+msgid "Invoice Bundle"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:359
+msgid "All in one Invoice bundle"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:361
+msgid "A complete suite of invoices and shipping documents bundle to create and print PDF invoices, packing slips, shipping and delivery documents in WooCommerce."
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:363
+msgid "Invoice"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:364
+msgid "Packing Slips"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:365
+msgid "Address Labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:366
+msgid "Dispatch Labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:367
+msgid "Shipping Labels"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:368
+msgid "Delivery Notes"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:369
+msgid "Picklists"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:443
+msgid "30 Day No Risk Money Back Guarantee"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:447
+msgid "99% Satisfaction Rating"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:448
+msgid "Fast Support with 99% Satisfaction Rating"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:495
+#: admin/views/wt-other-solutions.php:565
+#: admin/views/wt-other-solutions.php:671
+msgid "Get premium"
+msgstr ""
+
+#. translators: 1: strikethrough original price, 2: bold sale price, 3: savings text
+#: admin/views/wt-other-solutions.php:623
+#, php-format
+msgid "Total : <s>%1$s</s> <strong>%2$s</strong> <span class=\"wt-seq-os-savings\">(%3$s)</span>"
+msgstr ""
+
+#: admin/views/wt-other-solutions.php:640
+msgid "View Bundle"
 msgstr ""
 
 #: includes/class-bfcm-twenty-twenty-four.php:73
@@ -600,7 +883,7 @@ msgstr ""
 msgid "Unlock the pro benefits by upgrading to %1$s Sequential Order Number for WooCommerce Pro%2$s "
 msgstr ""
 
-#: includes/class-wt-advanced-order-number-settings.php:275
+#: includes/class-wt-advanced-order-number-settings.php:289
 msgid "Sequential order numbers for WooCommerce | Developed by"
 msgstr ""
 
