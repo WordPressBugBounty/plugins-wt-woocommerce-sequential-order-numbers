@@ -676,21 +676,21 @@ msgstr ""
 msgid "View Bundle"
 msgstr ""
 
-#: includes/class-bfcm-twenty-twenty-four.php:73
+#: includes/class-bfcm-twenty-twenty-six.php:73
 msgid "Never Miss This Deal"
 msgstr ""
 
 #. translators: %1$s: discount percentage
-#: includes/class-bfcm-twenty-twenty-four.php:78
+#: includes/class-bfcm-twenty-twenty-six.php:78
 #, php-format
 msgid "Your Last Chance to Avail %1$s on WebToffee Plugins. Grab the deal before it's gone!"
 msgstr ""
 
-#: includes/class-bfcm-twenty-twenty-four.php:79
+#: includes/class-bfcm-twenty-twenty-six.php:79
 msgid "OFF"
 msgstr ""
 
-#: includes/class-bfcm-twenty-twenty-four.php:84
+#: includes/class-bfcm-twenty-twenty-six.php:84
 msgid "View plugins"
 msgstr ""
 

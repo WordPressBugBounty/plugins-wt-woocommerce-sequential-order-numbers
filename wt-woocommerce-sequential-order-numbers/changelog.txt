@@ -1,6 +1,9 @@
 
 == Changelog ==
 
+= 1.8.2 2026-10-20 =
+* [Compatibility] - Tested OK with WooCommerce 11.2.1
+
 = 1.8.1 2026-09-09 =
 * [Add] - Added confirmation and warning before applying changes to existing orders.
 * [Fix] - Fixed fatal error when loading the WooCommerce settings page caused by the plugin's settings page not being properly registered.

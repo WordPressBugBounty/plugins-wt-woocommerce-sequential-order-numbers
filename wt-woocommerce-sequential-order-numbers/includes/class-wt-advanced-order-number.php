@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.8.1';
+            $this->version = '1.8.2';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -40,7 +40,7 @@ class Wt_Advanced_Order_Number {
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-wt-advanced-order-number-review_request.php';
         //add other solutions section
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-wt-advanced-order-number-other-solution.php';
-        require_once plugin_dir_path(dirname(__FILE__)). 'includes/class-bfcm-twenty-twenty-four.php';
+        require_once plugin_dir_path(dirname(__FILE__)). 'includes/class-bfcm-twenty-twenty-six.php';
         
         /**
 		 * The class responsible for defining all actions that occur in common for public and admin -facing

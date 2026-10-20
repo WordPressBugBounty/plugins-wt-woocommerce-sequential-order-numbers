@@ -1,0 +1,40 @@
+.wtso-bfcm-banner-2026.notice { position: relative; padding: 0; margin: 5px 15px 15px 15px; background: #000; border: none; border-radius: 10px; box-shadow: none; container-type: inline-size; }
+/* WooCommerce settings: line up with the other notices on the page. */
+body.woocommerce_page_wc-settings .wtso-bfcm-banner-2026.notice { margin: 5px 0 15px; }
+/* WordPress, WooCommerce and other plugins pad notices differently per page; the banner lays out its own content, so keep it at 0 everywhere. */
+.wtso-bfcm-banner-2026.notice { padding: 0 !important; }
+/*
+ * Sizes scale with the banner's own width (cqi = 1% of it) so the message always fits on one line:
+ * full size from a 1515px wide banner, shrinking smoothly down to the minimums below that.
+ */
+.wtso-bfcm-banner-2026 .notice-dismiss { top: 50%; right: clamp(12px, 2.640cqi, 40px); transform: translateY(-50%); }
+.wtso-bfcm-banner-2026 .notice-dismiss:before { content: "\f335"; color: #fff; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body { display: flex; align-items: center; gap: clamp(12px, 2.112cqi, 32px); padding: clamp(16px, 1.254cqi, 19px) clamp(48px, 6.337cqi, 96px) clamp(10px, 0.858cqi, 13px) clamp(18px, 3.168cqi, 48px); }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-img-section { flex: 0 0 auto; display: flex; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-img-section img { display: block; height: clamp(34px, 3.300cqi, 50px); width: auto; transform: translateY(-17%); } /* The OFF badge sits above the text; lift the image so "BLACK FRIDAY" is vertically centred. */
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info { flex: 1 1 auto; display: flex; align-items: center; gap: clamp(10px, 1.848cqi, 28px); }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info .info { flex: 0 1 auto; min-width: 0; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-never-miss-this-deal { flex: 0 0 auto; background: #D3FF24; border-radius: 80px; padding: clamp(5px, 0.527cqi, 8px) clamp(10px, 0.924cqi, 14px); }
+.wtso-bfcm-banner-2026 .wtso-bfcm-never-miss-this-deal p { margin: 0; padding: 0; color: #000; font-size: clamp(11px, 0.924cqi, 14px); font-weight: 600; line-height: 1.4; white-space: nowrap; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info .info p { margin: 0; padding: 0; color: #fff; font-size: clamp(11px, 0.924cqi, 14px); font-weight: 500; line-height: 1.4; white-space: nowrap; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info .info p span { margin: 0 4px; color: #D3FF24; font-size: clamp(17px, 1.451cqi, 22px); font-weight: 700; vertical-align: -1px; }
+.wtso-bfcm-banner-2026 .info-button { flex: 0 0 auto; }
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button,
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button:visited,
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button:focus,
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button:active { display: inline-flex; align-items: center; gap: 8px; padding: clamp(7px, 0.660cqi, 10px) clamp(14px, 1.451cqi, 22px); border: 1.5px solid #D3FF24; border-radius: 80px; background: transparent; color: #D3FF24; font-size: clamp(11px, 0.924cqi, 14px); font-weight: 500; line-height: 1.4; text-decoration: none; white-space: nowrap; box-shadow: none; outline: none; }
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button:hover { background: #D3FF24; color: #000; text-decoration: none; }
+.wtso-bfcm-banner-2026 .info-button a.bfcm_cta_button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.wtso-bfcm-banner-2026 .wtso-bfcm-arrow { font-size: clamp(13px, 1.056cqi, 16px); line-height: 1; }
+
+/* Too narrow for one row: stack the pill and button around the one-line message. */
+@container (max-width: 1180px) {
+	.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body { padding: 20px 50px 14px 22px; }
+	.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info { flex-wrap: wrap; gap: 10px 16px; }
+}
+
+/* Phones: let the message wrap. */
+@container (max-width: 760px) {
+	.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body { flex-wrap: wrap; }
+	.wtso-bfcm-banner-2026 .wtso-bfcm-banner-body-info .info p { white-space: normal; }
+}
