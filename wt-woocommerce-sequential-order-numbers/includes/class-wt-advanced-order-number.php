@@ -16,7 +16,7 @@ class Wt_Advanced_Order_Number {
         if (defined('WT_SEQUENCIAL_ORDNUMBER_VERSION')) {
             $this->version = WT_SEQUENCIAL_ORDNUMBER_VERSION;
         } else {
-            $this->version = '1.8.2';
+            $this->version = '1.8.3';
         }
         $this->plugin_name = 'wt-advanced-order-number';
         $this->plugin_base_name = WT_SEQUENCIAL_ORDNUMBER_BASE_NAME;
@@ -558,7 +558,7 @@ class Wt_Advanced_Order_Number {
     public static function is_old_order($order_id){
 
         $order = new WC_Order($order_id);
-        $order_date_format='Y-m-d h:i:s';
+        $order_date_format='Y-m-d H:i:s';
         $date_val = $order->get_date_created();  
         if($date_val){
             $order_date = $date_val->format($order_date_format); 
@@ -579,8 +579,8 @@ class Wt_Advanced_Order_Number {
         }
         $utc_timestamp = get_option('wt_seq_basic_installation_date');
         // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
-        $utc_timestamp_converted = date( 'Y-m-d h:i:s', $utc_timestamp );
-        $local_timestamp = get_date_from_gmt( $utc_timestamp_converted, 'Y-m-d h:i:s' );
+        $utc_timestamp_converted = date( 'Y-m-d H:i:s', $utc_timestamp );
+        $local_timestamp = get_date_from_gmt( $utc_timestamp_converted, 'Y-m-d H:i:s' );
         if($order_date < $local_timestamp)
         {
             $is_old_order = true;

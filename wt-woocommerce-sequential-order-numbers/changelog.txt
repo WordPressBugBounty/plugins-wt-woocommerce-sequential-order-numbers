@@ -1,6 +1,11 @@
 
 == Changelog ==
 
+= 1.8.3 2026-11-06 =
+* [Fix] - Fixed orders on the installation day being skipped due to a 12-hour time format used in the order date comparison.
+* [Compatibility] - Tested OK with WooCommerce 11.2.2
+* [Compatibility] - Tested OK with WordPress 7.1.4
+
 = 1.8.2 2026-10-20 =
 * [Compatibility] - Tested OK with WooCommerce 11.2.1
 
